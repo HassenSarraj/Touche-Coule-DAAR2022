@@ -133,7 +133,18 @@ const Buttons = ({ wallet }: { wallet: ReturnType<typeof useWallet> }) => {
   const next = () => wallet?.contract.turn()
   return (
     <div style={{ display: 'flex', gap: 5, padding: 5 }}>
-      <button onClick={() => {}}>Register</button>
+      <button onClick={() => {
+        const address = main.myShip
+        const address2 = main.myShip2
+        const address3 = main.myShip3
+        const address4 = main.myShip4
+        console.log(`Registering player ship ${address} `) ;
+        console.log(`Registering player ship ${address2} `) ;
+        wallet?.contract.register(address)
+        wallet?.contract.register(address2)
+        wallet?.contract.register(address3)
+        wallet?.contract.register(address4)
+      }}>Register</button>
       <button onClick={next}>Turn</button>
     </div>
   )
