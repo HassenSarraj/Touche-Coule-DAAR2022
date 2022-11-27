@@ -32,9 +32,9 @@ contract Myship3 is Ship {
   }
 
   function fire () public virtual override returns (uint , uint) {
-    fire_x = fire_x + 2 ;
-    fire_y = fire_y + 2 ;
-    return (fire_x , fire_y ) ;
+      fire_x = (8 * fire_x + 4) % 50  ;
+    fire_y = (8 * fire_y + 4) % 50  ;
+    return(fire_x, fire_y);
   }
 
   
